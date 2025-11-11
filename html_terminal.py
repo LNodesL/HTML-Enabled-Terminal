@@ -95,10 +95,13 @@ class HTMLTerminal(QMainWindow):
         self.update_display()
         
     def update_display(self):
+        # Set base URL to current directory to allow local file access
+        base_url = QUrl.fromLocalFile(os.getcwd() + "/")
+        
         if self.html_mode:
             # Render as HTML
             html_content = self.build_html()
-            self.web_view.setHtml(html_content)
+            self.web_view.setHtml(html_content, base_url)
         else:
             # Render as plain text
             plain_content = self.build_plain_text()
@@ -126,7 +129,7 @@ class HTMLTerminal(QMainWindow):
             </body>
             </html>
             """
-            self.web_view.setHtml(html_wrapper)
+            self.web_view.setHtml(html_wrapper, base_url)
             
     def build_html(self):
         content_html = "".join(self.terminal_content)
@@ -343,14 +346,14 @@ class HTMLTerminal(QMainWindow):
                 src = src_match.group(1)
                 # Check if it's not already a URL (http://, https://, file://, data:)
                 if not re.match(r'^(https?://|file://|data:)', src):
-                    # Convert relative or absolute local path to file:// URL
-                    if not os.path.isabs(src):
-                        # Make it absolute relative to current working directory
-                        src = os.path.abspath(os.path.join(os.getcwd(), src))
-                    # Convert to file:// URL
-                    src = 'file://' + src
-                    # Replace the src in the tag
-                    full_tag = re.sub(r'src=["\']([^"\']+)["\']', f'src="{src}"', full_tag)
+                    # Only convert absolute paths to file:// URLs
+                    # Relative paths will be resolved by the base URL
+                    if os.path.isabs(src):
+                        # Convert absolute path to file:// URL
+                        src = 'file://' + src
+                        # Replace the src in the tag
+                        full_tag = re.sub(r'src=["\']([^"\']+)["\']', f'src="{src}"', full_tag)
+                    # else: leave relative paths as-is, they'll work with base URL
             return full_tag
         
         # Process all img tags

@@ -13,13 +13,6 @@ A modern terminal application that can render HTML content alongside executing r
 - **Dark Theme**: Modern dark theme optimized for terminal use
 - **Responsive**: HTML content is rendered responsively
 
-![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal1.png)
-
-![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal2.png)
-
-![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal4.png)
-
-
 ## Installation
 
 1. Install Python dependencies:
@@ -31,13 +24,11 @@ pip install -r requirements.txt
 
 **Quick Start** (recommended):
 ```bash
-python -m venv ./venv
 ./run.sh
 ```
 
 Or activate the virtual environment and run manually:
 ```bash
-python -m venv ./venv
 source venv/bin/activate
 python html_terminal.py
 ```
