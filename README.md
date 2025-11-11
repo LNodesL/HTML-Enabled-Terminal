@@ -13,6 +13,8 @@ A modern terminal application that can render HTML content alongside executing r
 - **Dark Theme**: Modern dark theme optimized for terminal use
 - **Responsive**: HTML content is rendered responsively
 
+![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal1.png)
+
 ## Installation
 
 1. Install Python dependencies:
