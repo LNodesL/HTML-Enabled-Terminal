@@ -23,7 +23,9 @@ A modern terminal application that can render HTML content alongside executing r
 ## Installation
 
 1. Install Python dependencies:
-@@ -31,13 +24,11 @@ pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 **Quick Start** (recommended):
 ```bash
