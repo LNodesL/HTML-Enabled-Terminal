@@ -15,6 +15,11 @@ A modern terminal application that can render HTML content alongside executing r
 
 ![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal1.png)
 
+![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal2.png)
+
+![Screenshot of the HTML Enabled Terminal by nodes.](htmlterminal4.png)
+
+
 ## Installation
 
 1. Install Python dependencies:
