@@ -22,20 +22,10 @@ A modern terminal application that can render HTML content alongside executing r
 
 ## Installation
 
-1. Install Python dependencies:
+Activate the virtual environment and run manually:
 ```bash
+python -m venv ./venv
 pip install -r requirements.txt
-```
-
-**Quick Start** (recommended):
-```bash
-python -m venv ./venv
-./run.sh
-```
-
-Or activate the virtual environment and run manually:
-```bash
-python -m venv ./venv
 source venv/bin/activate
 python html_terminal.py
 ```
