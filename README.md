@@ -24,11 +24,13 @@ pip install -r requirements.txt
 
 **Quick Start** (recommended):
 ```bash
+python -m venv ./venv
 ./run.sh
 ```
 
 Or activate the virtual environment and run manually:
 ```bash
+python -m venv ./venv
 source venv/bin/activate
 python html_terminal.py
 ```
